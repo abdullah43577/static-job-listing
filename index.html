@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./dist/styles.css" />
+    <script defer src="./app/script.js" type="module"></script>
+    <script defer src="./app/app.js" type="module"></script>
+    <title>Frontend Mentor | Job Listings</title>
+  </head>
+  <body class="relative h-full w-full bg-lightGrayishCyanBG">
+    <header
+      class="h-[25vh] w-full bg-desaturatedDarkCyan bg-[url('/images/bg-header-mobile.svg')] bg-cover bg-center bg-no-repeat md:bg-[url('/images/bg-header-desktop.svg')]"
+    ></header>
+
+    <main class="mx-8 mb-8 max-w-full md:container md:mx-auto">
+      <!-- TODO: rendered div for filter -->
+      <div
+        class="filter--container hide flex h-auto w-full translate-y-[40px] items-center justify-between rounded bg-white px-4 py-3"
+      >
+        <div class="category--filter flex flex-wrap items-center gap-[0.5rem]">
+          <div class="flex items-center rounded bg-lightGrayishCyanBG filter">
+            <span class="px-2 py-1 font-bold text-desaturatedDarkCyan"
+              >Frontend</span
+            >
+            <figure
+              class="cursor-pointer rounded-r bg-desaturatedDarkCyan px-2 py-2 hover:bg-veryDarkGrayishCyan"
+            >
+              <img src="./images/icon-remove.svg" alt="icon-remove" />
+            </figure>
+          </div>
+
+          <div class="flex items-center rounded bg-lightGrayishCyanBG filter">
+            <span class="px-2 py-1 font-bold text-desaturatedDarkCyan"
+              >CSS</span
+            >
+            <figure
+              class="cursor-pointer rounded-r bg-desaturatedDarkCyan px-2 py-2 hover:bg-veryDarkGrayishCyan"
+            >
+              <img src="./images/icon-remove.svg" alt="icon-remove" />
+            </figure>
+          </div>
+
+          <div class="flex items-center rounded bg-lightGrayishCyanBG filter">
+            <span class="px-2 py-1 font-bold text-desaturatedDarkCyan"
+              >JavaScript</span
+            >
+            <figure
+              class="cursor-pointer rounded-r bg-desaturatedDarkCyan px-2 py-2 hover:bg-veryDarkGrayishCyan"
+            >
+              <img src="./images/icon-remove.svg" alt="icon-remove" />
+            </figure>
+          </div>
+        </div>
+
+        <button
+          class="cursor-pointer font-bold text-darkGrayishCyan hover:text-desaturatedDarkCyan hover:underline"
+        >
+          Clear
+        </button>
+      </div>
+
+      <!-- TODO: photosnap job listing -->
+      <section
+        class="photosnap--container relative mt-10 flex w-full flex-col items-center justify-between rounded border-l-[5px] border-l-desaturatedDarkCyan bg-white px-4 py-3 md:flex-row"
+      >
+        <div class="info--container flex w-full items-center md:w-1/2">
+          <figure
+            class="absolute w-[40px] translate-y-[-62px] md:relative md:mr-6 md:w-[80px] md:translate-y-0"
+          >
+            <img
+              src="./images/photosnap.svg"
+              alt="photosnap"
+              class="top-0 left-0 w-full"
+            />
+          </figure>
+
+          <div
+            class="info mt-4 flex flex-col justify-center gap-[0.5rem] md:mt-0"
+          >
+            <div class="company--section flex items-center gap-[0.5rem]">
+              <p class="font-bold text-desaturatedDarkCyan">photosnap</p>
+              <span
+                class="rounded-full bg-desaturatedDarkCyan px-2 py-[1px] text-sm font-bold text-white"
+                >NEW!</span
+              >
+              <span
+                class="rounded-full bg-veryDarkGrayishCyan px-2 py-[1px] text-sm font-bold text-white"
+                >FEATURED</span
+              >
+            </div>
+
+            <p class="font-bold text-veryDarkGrayishCyan">
+              Senior Frontend Developer
+            </p>
+
+            <div class="job--listing-info--section flex gap-[1rem]">
+              <span class="texst-sm text-darkGrayishCyan">1d ago</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">Full Time</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">USA only</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="categories--container mt-8 flex w-full flex-wrap gap-[0.5rem] border-t border-t-darkGrayishCyan pt-4 md:mt-0 md:h-[88px] md:w-1/2 md:items-center md:justify-end md:border-none md:pt-0"
+        >
+          <span
+            data-role="frontend"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Frontend</span
+          >
+          <span
+            data-level="senior"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Senior</span
+          >
+          <span
+            data-languages="html"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >HTML</span
+          >
+          <span
+            data-languages="css"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >CSS</span
+          >
+          <span
+            data-languages="javascript"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >JavaScript</span
+          >
+        </div>
+      </section>
+
+      <!-- TODO: Manage job listing -->
+      <section
+        class="manage--container relative mt-10 flex w-full flex-col items-center justify-between rounded border-l-[5px] border-l-desaturatedDarkCyan bg-white px-4 py-3 md:flex-row"
+      >
+        <div class="info--container flex w-full items-center md:w-1/2">
+          <figure
+            class="absolute w-[40px] translate-y-[-62px] md:relative md:mr-6 md:w-[80px] md:translate-y-0"
+          >
+            <img
+              src="./images/manage.svg"
+              alt="manage"
+              class="top-0 left-0 w-full"
+            />
+          </figure>
+
+          <div
+            class="info mt-4 flex flex-col justify-center gap-[0.5rem] md:mt-0"
+          >
+            <div class="company--section flex items-center gap-[0.5rem]">
+              <p class="font-bold text-desaturatedDarkCyan">Manage</p>
+              <span
+                class="rounded-full bg-desaturatedDarkCyan px-2 py-[1px] text-sm font-bold text-white"
+                >NEW!</span
+              >
+              <span
+                class="rounded-full bg-veryDarkGrayishCyan px-2 py-[1px] text-sm font-bold text-white"
+                >FEATURED</span
+              >
+            </div>
+
+            <p class="font-bold text-veryDarkGrayishCyan">
+              Fullstack Developer
+            </p>
+
+            <div class="job--listing-info--section flex gap-[1rem]">
+              <span class="texst-sm text-darkGrayishCyan">1d ago</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">Part Time</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">Remote</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="categories--container mt-8 flex w-full flex-wrap gap-[0.5rem] border-t border-t-darkGrayishCyan pt-4 md:mt-0 md:h-[88px] md:w-1/2 md:items-center md:justify-end md:border-none md:pt-0"
+        >
+          <span
+            data-role="fullstack"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Fullstack</span
+          >
+          <span
+            data-level="midweight"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Midweight</span
+          >
+          <span
+            data-languages="python"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Python</span
+          >
+          <span
+            data-tools="react"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >React</span
+          >
+        </div>
+      </section>
+
+      <!-- TODO: Account job listing -->
+      <section
+        class="account--container relative mt-10 flex w-full flex-col items-center justify-between rounded bg-white px-4 py-3 md:flex-row"
+      >
+        <div class="info--container flex w-full items-center md:w-1/2">
+          <figure
+            class="absolute w-[40px] translate-y-[-62px] md:relative md:mr-6 md:w-[80px] md:translate-y-0"
+          >
+            <img
+              src="./images/account.svg"
+              alt="account"
+              class="top-0 left-0 w-full"
+            />
+          </figure>
+
+          <div
+            class="info mt-4 flex flex-col justify-center gap-[0.5rem] md:mt-0"
+          >
+            <div class="company--section flex items-center gap-[0.5rem]">
+              <p class="font-bold text-desaturatedDarkCyan">Account</p>
+              <span
+                class="rounded-full bg-desaturatedDarkCyan px-2 py-[1px] text-sm font-bold text-white"
+                >NEW!</span
+              >
+            </div>
+
+            <p class="font-bold text-veryDarkGrayishCyan">
+              Junior Frontend Developer
+            </p>
+
+            <div class="job--listing-info--section flex gap-[1rem]">
+              <span class="texst-sm text-darkGrayishCyan">2d ago</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">Part Time</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">USA only</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="categories--container mt-8 flex w-full flex-wrap gap-[0.5rem] border-t border-t-darkGrayishCyan pt-4 md:mt-0 md:h-[88px] md:w-1/2 md:items-center md:justify-end md:border-none md:pt-0"
+        >
+          <span
+            data-role="frontend"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Frontend</span
+          >
+          <span
+            data-level="junior"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Junior</span
+          >
+          <span
+            data-tools="react"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >React</span
+          >
+          <span
+            data-tools="sass"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Sass</span
+          >
+          <span
+            data-languages="javascript"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >JavaScript</span
+          >
+        </div>
+      </section>
+
+      <!-- TODO: Myhome job listing -->
+      <section
+        class="myhome--container relative mt-10 flex w-full flex-col items-center justify-between rounded bg-white px-4 py-3 md:flex-row"
+      >
+        <div class="info--container flex w-full items-center md:w-1/2">
+          <figure
+            class="absolute w-[40px] translate-y-[-62px] md:relative md:mr-6 md:w-[80px] md:translate-y-0"
+          >
+            <img
+              src="./images/myhome.svg"
+              alt="myhome"
+              class="top-0 left-0 w-full"
+            />
+          </figure>
+
+          <div
+            class="info mt-4 flex flex-col justify-center gap-[0.5rem] md:mt-0"
+          >
+            <div class="company--section flex items-center gap-[0.5rem]">
+              <p class="font-bold text-desaturatedDarkCyan">myHome</p>
+            </div>
+
+            <p class="font-bold text-veryDarkGrayishCyan">
+              Junior Frontend Developer
+            </p>
+
+            <div class="job--listing-info--section flex gap-[1rem]">
+              <span class="texst-sm text-darkGrayishCyan">5d ago</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">Contract</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">USA only</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="categories--container mt-8 flex w-full flex-wrap gap-[0.5rem] border-t border-t-darkGrayishCyan pt-4 md:mt-0 md:h-[88px] md:w-1/2 md:items-center md:justify-end md:border-none md:pt-0"
+        >
+          <span
+            data-role="frontend"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Frontend</span
+          >
+          <span
+            data-level="junior"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Junior</span
+          >
+          <span
+            data-languages="css"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Css</span
+          >
+          <span
+            data-languages="javascript"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >JavaScript</span
+          >
+        </div>
+      </section>
+
+      <!-- TODO: loop studios job listing -->
+      <section
+        class="loopStudios--container relative mt-10 flex w-full flex-col items-center justify-between rounded bg-white px-4 py-3 md:flex-row"
+      >
+        <div class="info--container flex w-full items-center md:w-1/2">
+          <figure
+            class="absolute w-[40px] translate-y-[-62px] md:relative md:mr-6 md:w-[80px] md:translate-y-0"
+          >
+            <img
+              src="./images/loop-studios.svg"
+              alt="loop-studios"
+              class="top-0 left-0 w-full"
+            />
+          </figure>
+
+          <div
+            class="info mt-4 flex flex-col justify-center gap-[0.5rem] md:mt-0"
+          >
+            <div class="company--section flex items-center gap-[0.5rem]">
+              <p class="font-bold text-desaturatedDarkCyan">Loop Studios</p>
+            </div>
+
+            <p class="font-bold text-veryDarkGrayishCyan">Software Engineer</p>
+
+            <div class="job--listing-info--section flex gap-[1rem]">
+              <span class="texst-sm text-darkGrayishCyan">1w ago</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">Full Time</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">Worldwide</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="categories--container mt-8 flex w-full flex-wrap gap-[0.5rem] border-t border-t-darkGrayishCyan pt-4 md:mt-0 md:h-[88px] md:w-1/2 md:items-center md:justify-end md:border-none md:pt-0"
+        >
+          <span
+            data-role="fullstack"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Fullstack</span
+          >
+          <span
+            data-level="midweight"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Midweight</span
+          >
+          <span
+            data-languages="javascript"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >JavaScript</span
+          >
+          <span
+            data-tools="sass"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Sass</span
+          >
+          <span
+            data-languages="ruby"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Ruby</span
+          >
+        </div>
+      </section>
+
+      <!-- TODO: FaceIt job listing -->
+      <section
+        class="faceIt--container relative mt-10 flex w-full flex-col items-center justify-between rounded bg-white px-4 py-3 md:flex-row"
+      >
+        <div class="info--container flex w-full items-center md:w-1/2">
+          <figure
+            class="absolute w-[40px] translate-y-[-62px] md:relative md:mr-6 md:w-[80px] md:translate-y-0"
+          >
+            <img
+              src="./images/faceit.svg"
+              alt="FaceIt"
+              class="top-0 left-0 w-full"
+            />
+          </figure>
+
+          <div
+            class="info mt-4 flex flex-col justify-center gap-[0.5rem] md:mt-0"
+          >
+            <div class="company--section flex items-center gap-[0.5rem]">
+              <p class="font-bold text-desaturatedDarkCyan">FaceIt</p>
+            </div>
+
+            <p class="font-bold text-veryDarkGrayishCyan">
+              Junior Backend Developer
+            </p>
+
+            <div class="job--listing-info--section flex gap-[1rem]">
+              <span class="texst-sm text-darkGrayishCyan">2w ago</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">Full Time</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">UK only</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="categories--container mt-8 flex w-full flex-wrap gap-[0.5rem] border-t border-t-darkGrayishCyan pt-4 md:mt-0 md:h-[88px] md:w-1/2 md:items-center md:justify-end md:border-none md:pt-0"
+        >
+          <span
+            data-role="backend"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Backend</span
+          >
+          <span
+            data-level="junior"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Junior</span
+          >
+          <span
+            data-languages="ruby"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Ruby</span
+          >
+          <span
+            data-tools="ror"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >RoR</span
+          >
+        </div>
+      </section>
+
+      <!-- TODO: Shortly job listing -->
+      <section
+        class="shortly--container relative mt-10 flex w-full flex-col items-center justify-between rounded bg-white px-4 py-3 md:flex-row"
+      >
+        <div class="info--container flex w-full items-center md:w-1/2">
+          <figure
+            class="absolute w-[40px] translate-y-[-62px] md:relative md:mr-6 md:w-[80px] md:translate-y-0"
+          >
+            <img
+              src="./images/shortly.svg"
+              alt="shortly"
+              class="top-0 left-0 w-full"
+            />
+          </figure>
+
+          <div
+            class="info mt-4 flex flex-col justify-center gap-[0.5rem] md:mt-0"
+          >
+            <div class="company--section flex items-center gap-[0.5rem]">
+              <p class="font-bold text-desaturatedDarkCyan">Shortly</p>
+            </div>
+
+            <p class="font-bold text-veryDarkGrayishCyan">Junior Developer</p>
+
+            <div class="job--listing-info--section flex gap-[1rem]">
+              <span class="texst-sm text-darkGrayishCyan">2w ago</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">Full Time</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">Worldwide</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="categories--container mt-8 flex w-full flex-wrap gap-[0.5rem] border-t border-t-darkGrayishCyan pt-4 md:mt-0 md:h-[88px] md:w-1/2 md:items-center md:justify-end md:border-none md:pt-0"
+        >
+          <span
+            data-role="frontend"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Frontend</span
+          >
+          <span
+            data-level="junior"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Junior</span
+          >
+          <span
+            data-languages="html"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >HTML</span
+          >
+          <span
+            data-tools="sass"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Sass</span
+          >
+          <span
+            data-languages="javascript"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >JavaScript</span
+          >
+        </div>
+      </section>
+
+      <!-- TODO: Insure job listing -->
+      <section
+        class="insure--container relative mt-10 flex w-full flex-col items-center justify-between rounded bg-white px-4 py-3 md:flex-row"
+      >
+        <div class="info--container flex w-full items-center md:w-1/2">
+          <figure
+            class="absolute w-[40px] translate-y-[-62px] md:relative md:mr-6 md:w-[80px] md:translate-y-0"
+          >
+            <img
+              src="./images/insure.svg"
+              alt="insure svg"
+              class="top-0 left-0 w-full"
+            />
+          </figure>
+
+          <div
+            class="info mt-4 flex flex-col justify-center gap-[0.5rem] md:mt-0"
+          >
+            <div class="company--section flex items-center gap-[0.5rem]">
+              <p class="font-bold text-desaturatedDarkCyan">Insure</p>
+            </div>
+
+            <p class="font-bold text-veryDarkGrayishCyan">
+              Junior Frontend Developer
+            </p>
+
+            <div class="job--listing-info--section flex gap-[1rem]">
+              <span class="texst-sm text-darkGrayishCyan">2w ago</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">Full Time</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">USA only</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="categories--container mt-8 flex w-full flex-wrap gap-[0.5rem] border-t border-t-darkGrayishCyan pt-4 md:mt-0 md:h-[88px] md:w-1/2 md:items-center md:justify-end md:border-none md:pt-0"
+        >
+          <span
+            data-role="frontend"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Frontend</span
+          >
+          <span
+            data-level="junior"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Junior</span
+          >
+          <span
+            data-tools="vue"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Vue</span
+          >
+          <span
+            data-languages="javascript"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >JavaScript</span
+          >
+          <span
+            data-tools="sass"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Sass</span
+          >
+        </div>
+      </section>
+
+      <!-- TODO: Eyecam Co. job listing -->
+      <section
+        class="eyeCam--container relative mt-10 flex w-full flex-col items-center justify-between rounded bg-white px-4 py-3 md:flex-row"
+      >
+        <div class="info--container flex w-full items-center md:w-1/2">
+          <figure
+            class="absolute w-[40px] translate-y-[-62px] md:relative md:mr-6 md:w-[80px] md:translate-y-0"
+          >
+            <img
+              src="./images/eyecam-co.svg"
+              alt="eyecam-co svg"
+              class="top-0 left-0 w-full"
+            />
+          </figure>
+
+          <div
+            class="info mt-4 flex flex-col justify-center gap-[0.5rem] md:mt-0"
+          >
+            <div class="company--section flex items-center gap-[0.5rem]">
+              <p class="font-bold text-desaturatedDarkCyan">Eyecam Co.</p>
+            </div>
+
+            <p class="font-bold text-veryDarkGrayishCyan">
+              Full Stack Engineer
+            </p>
+
+            <div class="job--listing-info--section flex gap-[1rem]">
+              <span class="texst-sm text-darkGrayishCyan">3w ago</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">Full Time</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">Worldwide</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="categories--container mt-8 flex w-full flex-wrap gap-[0.5rem] border-t border-t-darkGrayishCyan pt-4 md:mt-0 md:h-[88px] md:w-1/2 md:items-center md:justify-end md:border-none md:pt-0"
+        >
+          <span
+            data-role="fullstack"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Fullstack</span
+          >
+          <span
+            data-level="midweight"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Midweight</span
+          >
+          <span
+            data-languages="javascript"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >JavaScript</span
+          >
+          <span
+            data-tools="django"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Django</span
+          >
+          <span
+            data-languages="python"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Python</span
+          >
+        </div>
+      </section>
+
+      <!-- TODO: The Air filter company job listing -->
+      <section
+        class="airFilter--container relative mt-10 flex w-full flex-col items-center justify-between rounded bg-white px-4 py-3 md:flex-row"
+      >
+        <div class="info--container flex w-full items-center md:w-1/2">
+          <figure
+            class="absolute w-[40px] translate-y-[-62px] md:relative md:mr-6 md:w-[80px] md:translate-y-0"
+          >
+            <img
+              src="./images/the-air-filter-company.svg"
+              alt="the-air-filter-company svg"
+              class="top-0 left-0 w-full"
+            />
+          </figure>
+
+          <div
+            class="info mt-4 flex flex-col justify-center gap-[0.5rem] md:mt-0"
+          >
+            <div class="company--section flex items-center gap-[0.5rem]">
+              <p class="font-bold text-desaturatedDarkCyan">
+                The Air Filter Company
+              </p>
+            </div>
+
+            <p class="font-bold text-veryDarkGrayishCyan">Front-end Dev</p>
+
+            <div class="job--listing-info--section flex gap-[1rem]">
+              <span class="texst-sm text-darkGrayishCyan">1mo ago</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">Part Time</span>
+              <span>.</span>
+              <span class="texst-sm text-darkGrayishCyan">Worldwide</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="categories--container mt-8 flex w-full flex-wrap gap-[0.5rem] border-t border-t-darkGrayishCyan pt-4 md:mt-0 md:h-[88px] md:w-1/2 md:items-center md:justify-end md:border-none md:pt-0"
+        >
+          <span
+            data-role="frontend"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Frontend</span
+          >
+          <span
+            data-level="junior"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Junior</span
+          >
+          <span
+            data-tools="react"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >React</span
+          >
+          <span
+            data-tools="sass"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >Sass</span
+          >
+          <span
+            data-languages="javascript"
+            class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+            >JavaScript</span
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="absolute bottom-5 left-5 hidden">
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#" target="_blank">Abdullah Ayooola</a>.
+      </div>
+    </footer>
+  </body>
+</html>
