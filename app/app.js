@@ -76,15 +76,15 @@ data.map((objValue) => {
               </p>
 
               <div class="job--listing-info--section flex gap-[1rem]">
-                <span class="texst-sm text-darkGrayishCyan">${
+                <span class="text-sm text-darkGrayishCyan">${
                   objValue.postedAt
                 }</span>
                 <span>.</span>
-                <span class="texst-sm text-darkGrayishCyan">${
+                <span class="text-sm text-darkGrayishCyan">${
                   objValue.contract
                 }</span>
                 <span>.</span>
-                <span class="texst-sm text-darkGrayishCyan">${
+                <span class="text-sm text-darkGrayishCyan">${
                   objValue.location
                 }</span>
               </div>
@@ -101,7 +101,7 @@ data.map((objValue) => {
             </span>
 
             <span
-              data-role="${objValue.level}"
+              data-level="${objValue.level}"
               class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
               >${objValue.level}
             </span>
@@ -110,7 +110,7 @@ data.map((objValue) => {
           ${objValue.languages
             .map((lang) => {
               return `<span
-              data-role="${objValue.role}"
+              data-languages="${lang}"
               class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
               >${lang}</span>`;
             })
@@ -119,7 +119,7 @@ data.map((objValue) => {
             ${objValue.tools
               .map((tool) => {
                 return `<span
-              data-role="${objValue.role}"
+              data-tools="${tool}"
               class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
               >${tool}</span>`;
               })
