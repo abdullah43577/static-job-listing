@@ -539,6 +539,10 @@ video {
   top: 0px;
 }
 
+.bottom-0{
+  bottom: 0px;
+}
+
 .mx-8{
   margin-left: 2rem;
   margin-right: 2rem;
@@ -558,6 +562,14 @@ video {
 
 .mt-8{
   margin-top: 2rem;
+}
+
+.mb-16{
+  margin-bottom: 4rem;
+}
+
+.mb-32{
+  margin-bottom: 8rem;
 }
 
 .flex{

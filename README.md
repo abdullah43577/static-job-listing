@@ -28,12 +28,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](<./screenshots/Screenshot%20(103).png>)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution URL here](https://www.frontendmentor.io/solutions/responsive-static-job-listing-page-built-using-tailwind-and-vanilla-js-78du-Cgj7F)
+- Live Site URL: [Live site URL here](https://static-pg.netlify.app/)
 
 ## My process
 
@@ -42,11 +42,8 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- [Tailwind](https://tailwindcss.com/docs/installation) - CSS Framework
 
 ### What I learned
 

@@ -21,7 +21,8 @@
 // };
 
 // let html;
-// data.forEach((objValue) => {
+// you can add .join('') later if things doesn't workoout
+// data.map((objValue) => {
 //   // TODO: Jobs listing
 
 //   if (objValue.new) {
