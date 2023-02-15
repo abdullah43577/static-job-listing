@@ -3,31 +3,11 @@ import data from "/app/data.json" assert { type: "json" };
 
 let main = document.querySelector("main");
 let sectionContainer = document.querySelector(".section--container");
-console.log(sectionContainer);
-
-const languagesArr = [];
-
-data.forEach((job) => {
-  job.languages.forEach((language) => languagesArr.push(language));
-});
-
-// ! use a function to increment a counter each time it's called to index values from the array above
-
-let index = 0;
-
-const indexIncrementor = function () {
-  if (index < languagesArr.length - 1) {
-    index++;
-  }
-  return languagesArr[index];
-};
-
-let html;
 
 data.map((objValue) => {
   // TODO: Jobs listing
 
-  html = `<section
+  let html = `<section
           class="${
             objValue.company
           }--container relative mt-10 flex w-full flex-col items-center justify-between rounded ${
