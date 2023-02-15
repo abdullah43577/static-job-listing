@@ -1,287 +1,131 @@
-// "use strict";
-// import data from "/app/data.json" assert { type: "json" };
+"use strict";
+import data from "/app/data.json" assert { type: "json" };
 
-// let main = document.querySelector("main");
+let main = document.querySelector("main");
+let sectionContainer = document.querySelector(".section--container");
+console.log(sectionContainer);
 
-// const languagesArr = [];
+const languagesArr = [];
 
-// data.forEach((job) => {
-//   job.languages.forEach((language) => languagesArr.push(language));
-// });
+data.forEach((job) => {
+  job.languages.forEach((language) => languagesArr.push(language));
+});
 
-// // ! use a function to increment a counter each time it's called to index values from the array above
+// ! use a function to increment a counter each time it's called to index values from the array above
 
-// let index = 0;
+let index = 0;
 
-// const indexIncrementor = function () {
-//   if (index < languagesArr.length - 1) {
-//     index++;
-//   }
-//   return languagesArr[index];
-// };
+const indexIncrementor = function () {
+  if (index < languagesArr.length - 1) {
+    index++;
+  }
+  return languagesArr[index];
+};
 
-// let html;
-// you can add .join('') later if things doesn't workoout
-// data.map((objValue) => {
-//   // TODO: Jobs listing
+let html;
 
-//   if (objValue.new) {
-//     html = `
-//             <section
-//               class="photosnap--container px-4 py-3 flex flex-col w-full bg-white rounded items-center justify-between relative mt-10 md:flex-row"
-//             >
-//               <div class="info--container flex w-full items-center md:w-1/2">
-//                 <figure
-//                   class="w-[40px] absolute translate-y-[-62px] md:relative md:translate-y-0 md:w-[80px] md:mr-6"
-//                 >
-//                   <img
-//                     src="${objValue.logo}"
-//                     alt="${objValue.company}"
-//                     class="w-full top-0 left-0"
-//                   />
-//                 </figure>
+data.map((objValue) => {
+  // TODO: Jobs listing
 
-//                 <div
-//                   class="info flex flex-col justify-center gap-[0.5rem] mt-4 md:mt-0"
-//                 >
-//                   <div class="company--section flex items-center gap-[0.5rem]">
-//                     <p class="text-desaturatedDarkCyan font-bold">${objValue.company}</p>
-//                     <span class="bg-desaturatedDarkCyan font-bold px-2 py-[1px] rounded-full text-white text-sm">NEW!</span>
-//                   </div>
-//                   <p class="text-veryDarkGrayishCyan font-bold">
-//                     ${objValue.position}
-//                   </p>
+  html = `<section
+          class="${
+            objValue.company
+          }--container relative mt-10 flex w-full flex-col items-center justify-between rounded ${
+    objValue.new && objValue.featured
+      ? `border-l-[5px] border-l-desaturatedDarkCyan`
+      : ""
+  }  bg-white px-4 py-3 md:flex-row"
+        >
+          <div class="info--container flex w-full items-center md:w-1/2">
+            <figure
+              class="absolute w-[40px] translate-y-[-62px] md:relative md:mr-6 md:w-[80px] md:translate-y-0"
+            >
+              <img
+                src="${objValue.logo}"
+                alt="${objValue.company}"
+                class="top-0 left-0 w-full"
+              />
+            </figure>
 
-//                   <div class="job--listing-info--section flex gap-[1rem]">
-//                     <span class="texst-sm text-darkGrayishCyan">${objValue.postedAt}</span>
-//                     <span>.</span>
-//                     <span class="texst-sm text-darkGrayishCyan">${objValue.contract}</span>
-//                     <span>.</span>
-//                     <span class="texst-sm text-darkGrayishCyan">${objValue.location}</span>
-//                   </div>
-//                 </div>
-//               </div>
+            <div
+              class="info mt-4 flex flex-col justify-center gap-[0.5rem] md:mt-0"
+            >
+              <div class="company--section flex items-center gap-[0.5rem]">
+                <p class="font-bold text-desaturatedDarkCyan">${
+                  objValue.company
+                }</p>
+                ${
+                  objValue.new
+                    ? `<span
+                  class="rounded-full bg-desaturatedDarkCyan px-2 py-[1px] text-sm font-bold text-white">NEW!
+                </span>`
+                    : ""
+                }
 
-//               <div
-//                 class="categories--container pt-4 mt-8 w-full flex gap-[0.5rem] border-t border-t-darkGrayishCyan flex-wrap md:pt-0 md:mt-0 md:border-none md:w-1/2 md:h-[88px] md:items-center md:justify-end"
-//               >
-//                 <span
-//                   class="text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >${objValue.role}</span
-//                 >
-//                 <span
-//                   class="text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >${objValue.level}</span
-//                 >
-//                 <span
-//                   class="language text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >HTML</span
-//                 >
-//                 <span
-//                   class="language text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >CSS</span
-//                 >
-//                 <span
-//                   class="language text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >JavaScript</span
-//                 >
-//               </div>
-//             </section>`;
-//   }
+                ${
+                  objValue.featured
+                    ? `<span
+                  class="rounded-full bg-veryDarkGrayishCyan px-2 py-[1px] text-sm font-bold text-white">FEATURED
+                </span>`
+                    : ""
+                }
+              </div>
 
-//   if (objValue.featured) {
-//     html = `
-//             <section
-//               class="photosnap--container px-4 py-3 flex flex-col w-full bg-white rounded items-center justify-between relative mt-10 md:flex-row"
-//             >
-//               <div class="info--container flex w-full items-center md:w-1/2">
-//                 <figure
-//                   class="w-[40px] absolute translate-y-[-62px] md:relative md:translate-y-0 md:w-[80px] md:mr-6"
-//                 >
-//                   <img
-//                     src="${objValue.logo}"
-//                     alt="${objValue.company}"
-//                     class="w-full top-0 left-0"
-//                   />
-//                 </figure>
+              <p class="font-bold text-veryDarkGrayishCyan">
+                ${objValue.company}
+              </p>
 
-//                 <div
-//                   class="info flex flex-col justify-center gap-[0.5rem] mt-4 md:mt-0"
-//                 >
-//                   <div class="company--section flex items-center gap-[0.5rem]">
-//                     <p class="text-desaturatedDarkCyan font-bold">${objValue.company}</p>
-//                     <span class="bg-desaturatedDarkCyan font-bold px-2 py-[1px] rounded-full text-white text-sm">FEATURED!</span>
-//                   </div>
-//                   <p class="text-veryDarkGrayishCyan font-bold">
-//                     ${objValue.position}
-//                   </p>
+              <div class="job--listing-info--section flex gap-[1rem]">
+                <span class="texst-sm text-darkGrayishCyan">${
+                  objValue.postedAt
+                }</span>
+                <span>.</span>
+                <span class="texst-sm text-darkGrayishCyan">${
+                  objValue.contract
+                }</span>
+                <span>.</span>
+                <span class="texst-sm text-darkGrayishCyan">${
+                  objValue.location
+                }</span>
+              </div>
+            </div>
+          </div>
 
-//                   <div class="job--listing-info--section flex gap-[1rem]">
-//                     <span class="texst-sm text-darkGrayishCyan">${objValue.postedAt}</span>
-//                     <span>.</span>
-//                     <span class="texst-sm text-darkGrayishCyan">${objValue.contract}</span>
-//                     <span>.</span>
-//                     <span class="texst-sm text-darkGrayishCyan">${objValue.location}</span>
-//                   </div>
-//                 </div>
-//               </div>
+          <div
+            class="categories--container mt-8 flex w-full flex-wrap gap-[0.5rem] border-t border-t-darkGrayishCyan pt-4 md:mt-0 md:h-[88px] md:w-1/2 md:items-center md:justify-end md:border-none md:pt-0"
+          >
+            <span
+              data-role="${objValue.role}"
+              class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+              >${objValue.role}
+            </span>
 
-//               <div
-//                 class="categories--container pt-4 mt-8 w-full flex gap-[0.5rem] border-t border-t-darkGrayishCyan flex-wrap md:pt-0 md:mt-0 md:border-none md:w-1/2 md:h-[88px] md:items-center md:justify-end"
-//               >
-//                 <span
-//                   class="text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >${objValue.role}</span
-//                 >
-//                 <span
-//                   class="text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >${objValue.level}</span
-//                 >
-//                 <span
-//                   class="language text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >HTML</span
-//                 >
-//                 <span
-//                   class="language text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >CSS</span
-//                 >
-//                 <span
-//                   class="language text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >JavaScript</span
-//                 >
-//               </div>
-//             </section>`;
-//   }
+            <span
+              data-role="${objValue.level}"
+              class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+              >${objValue.level}
+            </span>
 
-//   if (objValue.new && objValue.featured) {
-//     html = `
-//             <section
-//               class="photosnap--container px-4 py-3 flex flex-col w-full bg-white border-l-[5px] border-l-desaturatedDarkCyan rounded items-center justify-between relative mt-10 md:flex-row"
-//             >
-//               <div class="info--container flex w-full items-center md:w-1/2">
-//                 <figure
-//                   class="w-[40px] absolute translate-y-[-62px] md:relative md:translate-y-0 md:w-[80px] md:mr-6"
-//                 >
-//                   <img
-//                     src="${objValue.logo}"
-//                     alt="${objValue.company}"
-//                     class="w-full top-0 left-0"
-//                   />
-//                 </figure>
 
-//                 <div
-//                   class="info flex flex-col justify-center gap-[0.5rem] mt-4 md:mt-0"
-//                 >
-//                   <div class="company--section flex items-center gap-[0.5rem]">
-//                     <p class="text-desaturatedDarkCyan font-bold">${objValue.company}</p>
-//                     <span class="bg-desaturatedDarkCyan font-bold px-2 py-[1px] rounded-full text-white text-sm">NEW!</span>
+          ${objValue.languages
+            .map((lang) => {
+              return `<span
+              data-role="${objValue.role}"
+              class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+              >${lang}</span>`;
+            })
+            .join("")}
 
-//                   <span class="bg-veryDarkGrayishCyan font-bold px-2 py-[1px] rounded-full text-white text-sm"
-//                       >FEATURED</span>
-//                   </div>
-//                   <p class="text-veryDarkGrayishCyan font-bold">
-//                     ${objValue.position}
-//                   </p>
+            ${objValue.tools
+              .map((tool) => {
+                return `<span
+              data-role="${objValue.role}"
+              class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+              >${tool}</span>`;
+              })
+              .join("")}
+          </div>
+        </section>`;
 
-//                   <div class="job--listing-info--section flex gap-[1rem]">
-//                     <span class="texst-sm text-darkGrayishCyan">${objValue.postedAt}</span>
-//                     <span>.</span>
-//                     <span class="texst-sm text-darkGrayishCyan">${objValue.contract}</span>
-//                     <span>.</span>
-//                     <span class="texst-sm text-darkGrayishCyan">${objValue.location}</span>
-//                   </div>
-//                 </div>
-//               </div>
-
-//               <div
-//                 class="categories--container pt-4 mt-8 w-full flex gap-[0.5rem] border-t border-t-darkGrayishCyan flex-wrap md:pt-0 md:mt-0 md:border-none md:w-1/2 md:h-[88px] md:items-center md:justify-end"
-//               >
-//                 <span
-//                   class="text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >${objValue.role}</span
-//                 >
-//                 <span
-//                   class="text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >${objValue.level}</span
-//                 >
-//                 <span
-//                   class="language text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >HTML</span
-//                 >
-//                 <span
-//                   class="language text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >CSS</span
-//                 >
-//                 <span
-//                   class="language text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >JavaScript</span
-//                 >
-//               </div>
-//             </section>`;
-//   }
-
-//   if (!objValue.new && !objValue.featured) {
-//     html = `
-//             <section
-//               class="photosnap--container px-4 py-3 flex flex-col w-full bg-white rounded items-center justify-between relative mt-10 md:flex-row"
-//             >
-//               <div class="info--container flex w-full items-center md:w-1/2">
-//                 <figure
-//                   class="w-[40px] absolute translate-y-[-62px] md:relative md:translate-y-0 md:w-[80px] md:mr-6"
-//                 >
-//                   <img
-//                     src="${objValue.logo}"
-//                     alt="${objValue.company}"
-//                     class="w-full top-0 left-0"
-//                   />
-//                 </figure>
-
-//                 <div
-//                   class="info flex flex-col justify-center gap-[0.5rem] mt-4 md:mt-0"
-//                 >
-//                   <div class="company--section flex items-center gap-[0.5rem]">
-//                     <p class="text-desaturatedDarkCyan font-bold">${objValue.company}</p>
-//                   </div>
-//                   <p class="text-veryDarkGrayishCyan font-bold">
-//                     ${objValue.position}
-//                   </p>
-
-//                   <div class="job--listing-info--section flex gap-[1rem]">
-//                     <span class="texst-sm text-darkGrayishCyan">${objValue.postedAt}</span>
-//                     <span>.</span>
-//                     <span class="texst-sm text-darkGrayishCyan">${objValue.contract}</span>
-//                     <span>.</span>
-//                     <span class="texst-sm text-darkGrayishCyan">${objValue.location}</span>
-//                   </div>
-//                 </div>
-//               </div>
-
-//               <div
-//                 class="categories--container pt-4 mt-8 w-full flex gap-[0.5rem] border-t border-t-darkGrayishCyan flex-wrap md:pt-0 md:mt-0 md:border-none md:w-1/2 md:h-[88px] md:items-center md:justify-end"
-//               >
-//                 <span
-//                   class="text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >${objValue.role}</span
-//                 >
-//                 <span
-//                   class="text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >${objValue.level}</span
-//                 >
-//                 <span
-//                   class="language text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >HTML</span
-//                 >
-//                 <span
-//                   class="language text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >CSS</span
-//                 >
-//                 <span
-//                   class="language text-desaturatedDarkCyan font-bold py-[2px] px-2 bg-lightGrayishCyanFilter rounded"
-//                   >JavaScript</span
-//                 >
-//               </div>
-//             </section>`;
-//   }
-
-//   main.insertAdjacentHTML("beforeend", html);
-// });
+  sectionContainer.insertAdjacentHTML("beforeend", html);
+});

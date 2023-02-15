@@ -515,6 +515,34 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.container{
+  width: 100%;
+}
+
+@media (min-width: 480px){
+  .container{
+    max-width: 480px;
+  }
+}
+
+@media (min-width: 768px){
+  .container{
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 976px){
+  .container{
+    max-width: 976px;
+  }
+}
+
+@media (min-width: 1240px){
+  .container{
+    max-width: 1240px;
+  }
+}
+
 .absolute{
   position: absolute;
 }
@@ -523,8 +551,8 @@ video {
   position: relative;
 }
 
-.bottom-5{
-  bottom: 1.25rem;
+.bottom-0{
+  bottom: 0px;
 }
 
 .left-0{
@@ -537,10 +565,6 @@ video {
 
 .top-0{
   top: 0px;
-}
-
-.bottom-0{
-  bottom: 0px;
 }
 
 .mx-8{
@@ -562,14 +586,6 @@ video {
 
 .mt-8{
   margin-top: 2rem;
-}
-
-.mb-16{
-  margin-bottom: 4rem;
-}
-
-.mb-32{
-  margin-bottom: 8rem;
 }
 
 .flex{
