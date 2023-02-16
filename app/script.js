@@ -188,12 +188,13 @@ const hideContainer = function () {
   // remove hidden class
   filterContainer.classList.add("hide");
   filterContainer.classList.remove("show");
+  categoryFilter.innerHTML = "";
 };
 
 clearBtn.addEventListener("click", function () {
+  hideContainer();
   selectedFilter = [];
   filterJobs();
-  hideContainer();
 });
 
 // modal window section
