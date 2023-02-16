@@ -12,7 +12,6 @@
     />
     <link rel="stylesheet" href="./dist/styles.css" />
     <script defer src="./app/script.js" type="module"></script>
-    <script defer src="./app/app.js" type="module"></script>
     <title>Frontend Mentor | Job Listings</title>
   </head>
   <body class="relative h-full w-full bg-lightGrayishCyanBG">
@@ -37,6 +36,52 @@
       </div>
 
       <div class="section--container"></div>
+
+      <!-- Todo: Modal section -->
+      <div
+        class="modal--window absolute top-[50%] left-[50%] z-[9000] w-[300px] translate-x-[-50%] translate-y-[-150%] rounded bg-white px-6 py-4 text-center sm:w-[400px] md:w-[500px] md:translate-y-[-80%] lg:w-[700px]"
+      >
+        <h2 class="mb-2 text-xl font-bold text-desaturatedDarkCyan">
+          How Page works
+        </h2>
+        <p class="text-lg font-bold text-darkGrayishCyan">
+          This is a Job filtering Page, and here's how you're to filter jobs
+          according to categories specified
+        </p>
+
+        <ul>
+          <li class="py-3 text-lg font-bold text-veryDarkGrayishCyan">
+            If you're on desktop:
+          </li>
+          <ul>
+            <li>
+              ** You see those tablets by the right side of the screen, you
+              click on any of them to filter the job listing as desired
+            </li>
+            <img
+              src="./screenshots/Screenshot_24.png"
+              alt="Screenshot_24"
+              class="my-4 rounded"
+            />
+          </ul>
+
+          <li class="py-3 text-lg font-bold text-veryDarkGrayishCyan">
+            If you're on mobile
+          </li>
+          <ul>
+            <li>
+              ** The tablets are located below every container or elements on
+              the page
+            </li>
+            <img
+              src="./screenshots/Screenshot_25.png"
+              alt="Screenshot_25"
+              class="my-4 rounded"
+            />
+          </ul>
+        </ul>
+      </div>
+      <div class="overlay fixed top-0 left-0 z-[5000] h-full w-full"></div>
     </main>
 
     <footer class="absolute bottom-0 left-5 hidden">
