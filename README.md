@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](<./screenshots/Screenshot%20(103).png>)
+![](<./screenshots/Screenshot%20(105).png>)
 
 ### Links
 
@@ -47,34 +47,25 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+Using the js code below, I learnt that I can delete an element from an array without me as the user knowing the index, I could just get the index using the `indexOf()` method and use splice to delete that exact element from the array. This are two powerful array methods everyone should learn.
 
 ```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+// accessing the index of the selected content
+const index = selectedFilter.indexOf(textContentValue);
+
+// if true
+if (index > -1) {
+  selectedFilter.splice(index, 1);
+}
 ```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I'll continue developing myself in the way I think of building projects critically, to get the best the result with the least amount of effort or lines of codes.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Resource](https://tailwindcss.com/docs/installation) - This helped me style the page faster
 
 ## Author
 
@@ -84,4 +75,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+I can't submit this project without acknowledging someone, `@Nnadivictory25`.
+Link to Github Profile: - [Github Profile](https://github.com/Nnadivictory25)
+
+After almost giving up on this project, looking at his code inspired some changes to mine, which later resulted in me also making the final commit to this code. I learnt a lot just viewing his code.
