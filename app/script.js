@@ -69,12 +69,12 @@ data.map((objValue) => {
           >
             <span
               data-role="${objValue.role}"
-              class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+              class="tablet cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
               >${objValue.role}</span>
 
             <span
               data-level="${objValue.level}"
-              class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+              class="tablet cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
               >${objValue.level}</span>
 
 
@@ -82,7 +82,7 @@ data.map((objValue) => {
             .map((lang) => {
               return `<span
               data-languages="${lang}"
-              class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+              class="tablet cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
               >${lang}</span>`;
             })
             .join("")}
@@ -91,7 +91,7 @@ data.map((objValue) => {
               .map((tool) => {
                 return `<span
               data-tools="${tool}"
-              class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
+              class="tablet cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
               >${tool}</span>`;
               })
               .join("")}
@@ -105,7 +105,7 @@ const section = document.querySelectorAll("section");
 
 document.addEventListener("DOMContentLoaded", function () {
   sectionContainer.addEventListener("click", function (e) {
-    let clickedTablet = e.target.closest("span");
+    let clickedTablet = e.target.closest(".tablet");
 
     if (!clickedTablet) return;
 
