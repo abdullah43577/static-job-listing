@@ -3,23 +3,23 @@ import data from "/app/data.json" assert { type: "json" };
 
 let main = document.querySelector("main");
 let sectionContainer = document.querySelector(".section--container");
+const filterContainer = document.querySelector(".filter--container");
+const clearBtn = document.querySelector("button");
+const categoryFilter = document.querySelector(".category--filter");
+let selectedFilter = [];
 
 data.map((objValue) => {
   // TODO: Jobs listing
 
-  let html = `<section
-          class="${
-            objValue.company
-          }--container relative mt-10 flex w-full flex-col items-center justify-between rounded ${
+  let html = `<section class="${
+    objValue.company
+  }--container relative mt-10 flex w-full flex-col items-center justify-between   rounded ${
     objValue.new && objValue.featured
       ? `border-l-[5px] border-l-desaturatedDarkCyan`
       : ""
-  }  bg-white px-4 py-3 md:flex-row"
-        >
+  }  bg-white px-4 py-3 md:flex-row">
           <div class="info--container flex w-full items-center md:w-1/2">
-            <figure
-              class="absolute w-[40px] translate-y-[-62px] md:relative md:mr-6 md:w-[80px] md:translate-y-0"
-            >
+            <figure class="absolute w-[40px] translate-y-[-62px] md:relative md:mr-6 md:w-[80px] md:translate-y-0">
               <img
                 src="${objValue.logo}"
                 alt="${objValue.company}"
@@ -27,26 +27,20 @@ data.map((objValue) => {
               />
             </figure>
 
-            <div
-              class="info mt-4 flex flex-col justify-center gap-[0.5rem] md:mt-0"
-            >
+            <div class="info mt-4 flex flex-col justify-center gap-[0.5rem] md:mt-0">
               <div class="company--section flex items-center gap-[0.5rem]">
                 <p class="font-bold text-desaturatedDarkCyan">${
                   objValue.company
                 }</p>
                 ${
                   objValue.new
-                    ? `<span
-                  class="rounded-full bg-desaturatedDarkCyan px-2 py-[1px] text-sm font-bold text-white">NEW!
-                </span>`
+                    ? `<span class="rounded-full bg-desaturatedDarkCyan px-2 py-[1px] text-sm font-bold text-white">NEW!</span>`
                     : ""
                 }
 
                 ${
                   objValue.featured
-                    ? `<span
-                  class="rounded-full bg-veryDarkGrayishCyan px-2 py-[1px] text-sm font-bold text-white">FEATURED
-                </span>`
+                    ? `<span class="rounded-full bg-veryDarkGrayishCyan px-2 py-[1px] text-sm font-bold text-white">FEATURED</span>`
                     : ""
                 }
               </div>
@@ -108,17 +102,19 @@ data.map((objValue) => {
   sectionContainer.insertAdjacentHTML("beforeend", html);
 });
 
-const categoryFilter = document.querySelector(".category--filter");
-let selectedFilter = [];
 const section = document.querySelectorAll("section");
 
 document.addEventListener("DOMContentLoaded", function () {
-  main.addEventListener("click", function (e) {
+  sectionContainer.addEventListener("click", function (e) {
     let clickedTablet = e.target.closest("span");
 
     if (!clickedTablet) return;
 
     let textContent = clickedTablet.textContent;
+
+    // remove hidden class
+    filterContainer.classList.remove("hide");
+    filterContainer.classList.add("show");
 
     categoryFilter.innerHTML += renderFilter(textContent);
 
@@ -143,7 +139,7 @@ const filterJobs = function () {
   let filteredSections = [];
 
   section.forEach((sect) => {
-    // * converting childEl to an array-like to allowing looping through its child elements
+    // * converting childEl to an array for allowing looping through its child elements
     childEl = Array.from(sect.lastElementChild.children);
     if (
       selectedFilter.every((element) =>
@@ -159,9 +155,40 @@ const filterJobs = function () {
   sectionContainer.innerHTML = htmlString;
 };
 
-const filterContainer = document.querySelector(".filter--container");
-
 filterContainer.addEventListener("click", function (e) {
-  let close = e.target.closest(".selected--filter");
-  console.log(close);
+  let clickedEl = e.target.closest(".selected--filter");
+  console.log(clickedEl);
+
+  if (!clickedEl) return;
+
+  let textContentValue = clickedEl.firstElementChild.textContent;
+  console.log(textContentValue);
+
+  // console.log("before", selectedFilter);
+
+  // accessing the index of the selected content
+  const index = selectedFilter.indexOf(textContentValue);
+
+  if (index > -1) {
+    selectedFilter.splice(index, 1);
+  }
+
+  // console.log("after", selectedFilter);
+
+  clickedEl.remove();
+  filterJobs();
+
+  if (categoryFilter.children.length === 0) hideContainer();
+});
+
+const hideContainer = function () {
+  // remove hidden class
+  filterContainer.classList.add("hide");
+  filterContainer.classList.remove("show");
+};
+
+clearBtn.addEventListener("click", function () {
+  selectedFilter = [];
+  filterJobs();
+  hideContainer();
 });
