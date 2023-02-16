@@ -77,14 +77,12 @@ data.map((objValue) => {
             <span
               data-role="${objValue.role}"
               class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
-              >${objValue.role}
-            </span>
+              >${objValue.role}</span>
 
             <span
               data-level="${objValue.level}"
               class="cursor-pointer rounded bg-lightGrayishCyanFilter py-[2px] px-2 font-bold text-desaturatedDarkCyan hover:bg-desaturatedDarkCyan hover:text-white"
-              >${objValue.level}
-            </span>
+              >${objValue.level}</span>
 
 
           ${objValue.languages
@@ -108,4 +106,62 @@ data.map((objValue) => {
         </section>`;
 
   sectionContainer.insertAdjacentHTML("beforeend", html);
+});
+
+const categoryFilter = document.querySelector(".category--filter");
+let selectedFilter = [];
+const section = document.querySelectorAll("section");
+
+document.addEventListener("DOMContentLoaded", function () {
+  main.addEventListener("click", function (e) {
+    let clickedTablet = e.target.closest("span");
+
+    if (!clickedTablet) return;
+
+    let textContent = clickedTablet.textContent;
+
+    categoryFilter.innerHTML += renderFilter(textContent);
+
+    filterJobs();
+  });
+});
+
+const renderFilter = function (value) {
+  //push clicked tablets to array
+  selectedFilter.push(value);
+
+  return `<div class="selected--filter flex cursor-pointer items-center rounded bg-lightGrayishCyanFilter">
+        <span class="px-2 font-bold text-desaturatedDarkCyan">${value}</span>
+        <figure class="h-full rounded-r bg-desaturatedDarkCyan px-2 py-2 hover:bg-veryDarkGrayishCyan">
+            <img src="./images/icon-remove.svg" alt="icon-remove" />
+        </figure>
+  </div>`;
+};
+
+const filterJobs = function () {
+  let childEl;
+  let filteredSections = [];
+
+  section.forEach((sect) => {
+    // * converting childEl to an array-like to allowing looping through its child elements
+    childEl = Array.from(sect.lastElementChild.children);
+    if (
+      selectedFilter.every((element) =>
+        childEl.some((child) => child.textContent === element)
+      )
+    ) {
+      filteredSections.push(sect);
+    }
+  });
+
+  let htmlString = "";
+  filteredSections.forEach((el) => (htmlString += el.outerHTML));
+  sectionContainer.innerHTML = htmlString;
+};
+
+const filterContainer = document.querySelector(".filter--container");
+
+filterContainer.addEventListener("click", function (e) {
+  let close = e.target.closest(".selected--filter");
+  console.log(close);
 });

@@ -588,6 +588,14 @@ video {
   margin-top: 2rem;
 }
 
+.ml-3{
+  margin-left: 0.75rem;
+}
+
+.ml-2{
+  margin-left: 0.5rem;
+}
+
 .flex{
   display: flex;
 }
@@ -620,13 +628,13 @@ video {
   max-width: 100%;
 }
 
-.translate-y-\[-62px\]{
-  --tw-translate-y: -62px;
+.translate-y-\[-30px\]{
+  --tw-translate-y: -30px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.translate-y-\[40px\]{
-  --tw-translate-y: 40px;
+.translate-y-\[-62px\]{
+  --tw-translate-y: -62px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -769,8 +777,22 @@ video {
   padding-bottom: 2px;
 }
 
+.px-1{
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.px-\[2px\]{
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
 .pt-4{
   padding-top: 1rem;
+}
+
+.pl-1{
+  padding-left: 0.25rem;
 }
 
 .text-sm{
@@ -816,7 +838,8 @@ body {
   font-family: "League Spartan", sans-serif;
 }
 
-section {
+section,
+.filter--container {
   box-shadow: 3px 5px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
