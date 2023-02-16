@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const renderFilter = function (value) {
   //push clicked tablets to array
   // checking to see if the same tablet was clicked twice any where in the DOM
-  if (selectedFilter.includes(value)) return;
+  if (selectedFilter.includes(value)) return "";
 
   selectedFilter.push(value);
 
@@ -159,24 +159,16 @@ const filterJobs = function () {
 
 filterContainer.addEventListener("click", function (e) {
   let clickedEl = e.target.closest(".selected--filter");
-  console.log(clickedEl);
 
   if (!clickedEl) return;
 
   let textContentValue = clickedEl.firstElementChild.textContent;
-  console.log(textContentValue);
-
-  // console.log("before", selectedFilter);
 
   // accessing the index of the selected content
   const index = selectedFilter.indexOf(textContentValue);
 
   // if true
-  if (index > -1) {
-    selectedFilter.splice(index, 1);
-  }
-
-  // console.log("after", selectedFilter);
+  if (index > -1) selectedFilter.splice(index, 1);
 
   clickedEl.remove();
   filterJobs();
